@@ -1,0 +1,5 @@
+<div class="container"  (mouseenter)="hasHover=true" (mouseleave)="hasHover=false">
+  <app-edit-todo [todoList]="todoList">
+  </app-edit-todo>
+  <button *ngIf="hasHover" mat-button (click)="onSubmit()">Save</button>
+</div>

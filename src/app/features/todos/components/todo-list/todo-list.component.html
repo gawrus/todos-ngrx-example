@@ -1,0 +1,16 @@
+<div class="add-todo-container">
+  <app-add-todo class="add-todo-component">
+
+  </app-add-todo>
+</div>
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div [fxFlex]="(100/4) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let todoList of (todoListEntites$ | async)">
+      <app-todo-details [todoList]="todoList">
+
+      </app-todo-details>
+
+    </div>
+  </div>
+</div>

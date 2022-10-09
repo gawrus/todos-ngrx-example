@@ -1,0 +1,20 @@
+<div class="container" [formGroup]="form">
+  <div>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Ex. Pay rent" formControlName="name" autocomplete="off">
+    </mat-form-field>
+  </div>
+  <ng-container *ngFor="let todoForm of todos.controls; let i = index">
+    <div class="form-row" [formGroup]="todoForm">
+      <mat-checkbox class="form-check" color="primary" formControlName="isCompleted"></mat-checkbox>
+      <input class="form-input" matInput autocomplete="off"
+                  formControlName="name"
+                  placeholder="New element..">
+
+
+      <mat-icon class="form-delete" (click)="deleteTodo(i)">delete_forever</mat-icon>
+    </div>
+  </ng-container>
+  <mat-icon class="delete-btn" (click)="addTodo()">note_add</mat-icon>
+</div>
